@@ -23,7 +23,7 @@ for x in items:
         photo = BytesIO(response.content)
         response = twitter.upload_media(media=photo)
         twitter.update_status(media_ids=[response['media_id']])
-        print("tweeted!" + x.title)
+        print("tweeted! " + x.title)
         # Removes block from channel after it's been tweeted to
         # ensure it doesnt get tweeted again
         chan.remove_block(x.id)
